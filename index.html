@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz Game — XG</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Quick Quiz</h1>
+      <p class="muted">Test your knowledge — timer per question, immediate feedback, leaderboard.</p>
+    </header>
+
+    <main id="main">
+      <div id="start-screen" class="card center">
+        <h2>Ready to play?</h2>
+        <p>10 randomized multiple-choice questions. 15 seconds per question.</p>
+        <div class="meta">
+          <label>Questions:
+            <select id="numQuestions">
+              <option value="10" selected>10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </label>
+          <label>Time per Q:
+            <select id="timePerQ">
+              <option value="10">10s</option>
+              <option value="15" selected>15s</option>
+              <option value="30">30s</option>
+            </select>
+          </label>
+        </div>
+        <button id="startBtn" class="btn">Start Quiz</button>
+        <button id="viewLeaderboardBtn" class="btn ghost">View Leaderboard</button>
+      </div>
+
+      <div id="quiz-screen" class="card hidden">
+        <div class="top-row">
+          <div>Question <span id="qIndex">1</span>/<span id="qTotal">10</span></div>
+          <div>Score: <span id="score">0</span></div>
+        </div>
+
+        <div id="timer" class="timer">
+          <div id="timer-bar" class="timer-bar"></div>
+          <div id="timer-text" class="timer-text"></div>
+        </div>
+
+        <h3 id="questionText"></h3>
+        <div id="choices" class="choices"></div>
+
+        <div id="feedback" class="feedback hidden"></div>
+        <div class="controls">
+          <button id="nextBtn" class="btn" disabled>Next</button>
+          <button id="quitBtn" class="btn ghost">Quit</button>
+        </div>
+      </div>
+
+      <div id="result-screen" class="card hidden">
+        <h2>Quiz Complete</h2>
+        <p>Your score: <strong id="finalScore">0</strong>/<span id="finalTotal">10</span></p>
+        <p id="gradeText" class="grade"></p>
+
+        <div class="submit-row">
+          <label>
+            Name for leaderboard:
+            <input id="playerName" type="text" maxlength="24" placeholder="Your name (optional)" />
+          </label>
+          <button id="submitScoreBtn" class="btn">Submit Score</button>
+          <button id="restartBtn" class="btn ghost">Play Again</button>
+        </div>
+
+        <div id="submitMsg" class="muted"></div>
+        <button id="viewLeaderboardBtn2" class="btn ghost">View Leaderboard</button>
+      </div>
+
+      <div id="leaderboard-screen" class="card hidden">
+        <h2>Leaderboard</h2>
+        <div id="leaderboardList" class="leaderboard-list"></div>
+        <div class="controls">
+          <button id="backToStart" class="btn ghost">Back</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="muted small">Built with HTML / CSS / JavaScript / PHP — drop-in and modify the questions in <code>script.js</code>.</footer>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
