@@ -119,3 +119,26 @@ label{display:flex; gap:8px; align-items:center}
   #quiz-screen .choice { padding:10px; font-size:0.95rem; }
   #quiz-screen .timer-text { right:6px; top:-20px; font-size:0.85rem; }
 }
+
+/* ----------------------------
+   FORCED CHOICE TEXT COLOR OVERRIDES
+   (Ensures choice text is black for maximum contrast)
+   ---------------------------- */
+
+/* Make answer choice text black (and any inline elements inside choices) */
+#quiz-screen .choice,
+#quiz-screen .choice * {
+  color: #000000 !important;
+}
+
+/* Ensure correct/incorrect choices also show black text */
+#quiz-screen .choice.correct,
+#quiz-screen .choice.correct * {
+  color: #000000 !important;
+}
+#quiz-screen .choice.incorrect,
+#quiz-screen .choice.incorrect * {
+  color: #000000 !important;
+}
+
+/* If you want choice text slightly darker gray instead of pure black, replace #000000 above with #111827 or #0b1320 */
