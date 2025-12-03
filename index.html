@@ -88,6 +88,7 @@
     <footer class="muted small">Built with HTML / CSS / JavaScript / PHP — drop-in and modify the questions in <code>script.js</code>.</footer>
   </div>
 
-  <script src="script.js" type="module"></script>
+  <!-- changed: removed type="module" to avoid timing/CORS/module issues on some setups -->
+  <script src="script.js"></script>
 </body>
 </html>
